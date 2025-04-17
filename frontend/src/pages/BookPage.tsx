@@ -14,7 +14,9 @@ function BookPage() {
 
   useEffect(() => {
     if (bookId) {
-      fetch(`https://localhost:5000/Book/GetBookByID?bookID=${bookId}`)
+      fetch(
+        `https://jolly-island-020e61710.6.azurestaticapps.net/Book/GetBookByID?bookID=${bookId}`
+      )
         .then((response) => response.json())
         .then((data: Book) => setBook(data))
         .catch((err) => console.error('Error fetching book:', err));
